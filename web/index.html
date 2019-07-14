@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Event Recommendation</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Event Recommendation">
+    <meta name="author" content="Xulixiao Tian">
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="84513336089-urdl44823416vtdas5bt4i2mqu17s6oc.apps.googleusercontent.com">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script
+        src="http://code.jquery.com/ui/1.12.1/jquery-ui.js"
+        integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
+        crossorigin="anonymous"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <script src="https://rawgit.com/emn178/js-md5/master/build/md5.min.js"></script>
+    <script src="js/login.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<header class="top-header">
+    <nav class="top-nav">
+        <a href="#">Home</a>
+        <a href="#">Contact</a>
+        <a href="#">About</a>
+    </nav>
+    <div id="signin" class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+    <span id="welcome-msg"></span>
+    <div id="signout" class="g-signout2" href="#" onclick="signOut();">(Sign out)</div>
+    <span id="user"><i id="avatar" class="avatar fa fa-user fa-2x"></i></span>
+</header>
+<div class="container">
+    <header>
+        <p>
+            <span>Event</span>
+            <br /> Recommendation
+        </p>
+    </header>
+
+    <section class="main-section">
+        <aside id="event-nav">
+            <div class="nav-icon">
+                <i class="fa fa-sitemap fa-2x"></i>
+            </div>
+            <nav class="main-nav">
+                <a href="#" id="nearby-btn" class="main-nav-btn">
+                    <i class="fa fa-map-marker"></i> Nearby
+                </a>
+                <a href="#" id="fav-btn" class="main-nav-btn">
+                    <i class="fa fa-heart"></i> My Favorites
+                </a>
+                <a href="#" id="recommend-btn" class="main-nav-btn">
+                    <i class="fa fa-thumbs-up"></i> Recommendation
+                </a>
+            </nav>
+        </aside>
+        <ul id="event-list">
+        </ul>
+    </section>
+</div>
+<script src="js/index.js"></script>
+</body>
+</html>
