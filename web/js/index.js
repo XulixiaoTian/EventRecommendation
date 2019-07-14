@@ -27,8 +27,7 @@ function initGeoLocation() {
 function onPositionUpdated(position) {
   lat = position.coords.latitude;
   lon = position.coords.longitude;
-
-  loadNearbyEvents();
+  $("#event-list").empty();
 }
 
 function onLoadPositionFailed() {
@@ -49,7 +48,7 @@ function getLocationFromIP() {
     } else {
       console.warn('Getting location by IP failed.');
     }
-    loadNearbyEvents();
+    $("#event-list").empty();
   });
 }
 
@@ -220,8 +219,7 @@ function addEvent(eventList, event) {
   var address = $("<p></p>", {
     class: 'event-address'
   });
-  address.text(event.address.replace(/,/g, '<br/>').replace(/\"/g,
-      ''));
+  address.text(event.address);
   li.append(address);
 
   // favourite link
